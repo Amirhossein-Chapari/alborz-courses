@@ -32,7 +32,7 @@ export default function CoursePage({ course, slug }) {
 
 export async function getServerSideProps({ params }) {
     const { slug } = params;
-    const res = await fetch(`https://albacademy.liara.run/api/courses/${slug}`);
+    const res = await fetch(`https://alborz-institute.com/prereg/api/courses/${slug}`);
     const course = await res.json();
 
     if (!course) {

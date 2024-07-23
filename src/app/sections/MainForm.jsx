@@ -13,7 +13,7 @@ function MainForm() {
         onSubmit: async (values) => {
             console.log(values);
             try {
-                const response = await fetch('https://albacademy.liara.run/api/prereg/', {
+                const response = await fetch('https://alborz-institute.com/prereg/api/prereg/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

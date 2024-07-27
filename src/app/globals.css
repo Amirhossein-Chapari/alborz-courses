@@ -37,7 +37,7 @@
     font-family: "Morabba Bold";
     src: local("Dana"), url(../../public/fonts/Morabba/Morabba-Bold.woff2) format("woff2");
     font-display: swap;
-  } 
+  }
 }
 
 :root {
@@ -53,6 +53,7 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+
 html {
   @apply scroll-smooth
 }
@@ -90,7 +91,15 @@ h4 {
   }
 }
 
-.parallax-img {
-  background-image: linear-gradient(#262627e6, #1c1c1cdf), url(../../public/images/computer-programming-coding-technology.jpg);
-  @apply bg-cover bg-fixed bg-center bg-no-repeat shadow-lg
+@layer components {
+
+  .no-spinner::-webkit-outer-spin-button,
+  .no-spinner::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .no-spinner {
+    -moz-appearance: textfield;
+  }
 }

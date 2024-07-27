@@ -8,22 +8,21 @@ import Professors from "@/app/sections/Professors";
 import Events from "@/app/sections/Events";
 import Newsletter from "@/app/sections/Newsletter";
 import Footer from "@/app/sections/Footer";
+import Custom404 from "../404";
 
-
-export default function CoursePage({ course, slug }) {
-    if (!course) {
-        return <div>Loading...</div>;
+export default function CoursePage({ course, notFound }) {
+    if (notFound) {
+        return <Custom404 />;
     }
-
 
     return (
         <div dir="rtl">
             <Header />
             <Hero prop={course} />
             <Features prop={course} />
-            <MainForm />
+            <MainForm courseId={course.id} />
             <Professors prop={course} />
-            <Events prop={course} />
+            {/* <Events prop={course} /> */}
             <Newsletter />
             <Footer />
         </div>
@@ -33,15 +32,22 @@ export default function CoursePage({ course, slug }) {
 export async function getServerSideProps({ params }) {
     const { slug } = params;
     const res = await fetch(`https://alborz-institute.com/prereg/api/courses/${slug}/`);
+
+    if (!res.ok) {
+        return {
+            props: { notFound: true },
+        };
+    }
+
     const course = await res.json();
 
     if (!course) {
         return {
-            notFound: true,
+            props: { notFound: true },
         };
     }
 
     return {
-        props: { course, slug },
+        props: { course },
     };
 }

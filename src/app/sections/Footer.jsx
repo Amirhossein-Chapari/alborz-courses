@@ -1,43 +1,57 @@
 import React from 'react'
 import { MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid'
+import Image from 'next/image'
+import logo from '../../../public/images/logo.png'
 
 function Footer() {
     return (
         <>
             <footer className='pt-12 xl:pt-[150px] border-b'>
-                <div className="px-[1.5rem] lg:px-[6rem] mx-auto pb-12 xl:pb-[100px]">
+                <div className="container pb-12 xl:pb-[100px]">
                     <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-x-20 gap-y-10'>
                         {/* Logo & Desc section */}
-                        <div className='flex-1 flex xl:justify-start md:col-span-2 xl:col-span-1'>
-                            <div className='font-DanaMedium'>
-                                <h2 className='font-MorabbaMedium'>لوگو</h2>
-                                <br />
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>                        </div>
+                        <div className='md:col-span-2 xl:col-span-1'>
+                            <Image
+                                src={logo}
+                                width={100}
+                                height={50}
+                                alt="Logo"
+                            >
+                            </Image>
+                            <br />
+                            <p className='tracking-tight'>
+                                البرز مفتخر است که بیش از 25 سال با برگزاری دوره های خاص IT هم در زمینه شبکه و برنامه نویسی با بهره گیری از مجرب ترین اساتید ایران، خدمات شایانی را جهت تربیت و عرضه نیروی کار ماهر نموده است.
+                            </p>
                         </div>
                         {/* Footer contact section */}
-                        <div className='flex-1 flex xl:justify-center'>
+                        <div>
                             <div className='font-DanaMedium'>
                                 <h2 className='font-MorabbaBold'>ارتباط با ما</h2>
                                 <br />
-                                <div className='flex items-center gap-2'>
-                                    <MapPinIcon className='w-5 text-accent' />
-                                    آدرس: تبریز، خیابان ولیعصر، اوحدی
+                                <div className='flex items-start gap-2 '>
+                                    <MapPinIcon className='w-8 text-accent h-full' />
+                                    آدرس: تبریز، شهرک ولیعصر، خیابان اوحدی، جنب شهر کتاب، ساختمان رهبری
                                 </div>
-                                <div className='flex items-center gap-2'>
-                                    <PhoneIcon className='w-5 text-accent' />
-                                    شماره تماس ها:
-                                    <p dir='ltr'>(413) ------</p>
-                                    ،
-                                    <p dir='ltr'>(413) ------</p>
+                                <div className='flex items-start mt-1 gap-2'>
+                                    <div className='flex gap-2'>
+                                        <PhoneIcon className='w-5 text-accent' />
+                                        <p> شماره تماس ها:</p>
+                                    </div>
+
+                                    <span>
+                                        <p dir='ltr'>04133323879</p>
+                                        <p dir='ltr'>04133323821</p>
+                                    </span>
+
                                 </div>
                             </div>
 
 
                         </div>
                         {/* Quick links section */}
-                        <div className='flex-1 flex xl:justify-end'>
+                        <div>
                             <div>
-                                <h2 className='font-MorabbaBold'>شبکه های اجتماعی</h2>
+                                <h2 className='font-MorabbaBold'>شبکه اجتماعی</h2>
                                 <br />
                                 <div className='font-DanaMedium'>
                                     <a href='#' className='flex items-center gap-2'>

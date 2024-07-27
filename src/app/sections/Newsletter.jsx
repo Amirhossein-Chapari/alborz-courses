@@ -2,11 +2,11 @@ import React from 'react'
 
 function Newsletter() {
     return (
-        <section id='newsletter' className='bg-accent md:h-[400px] py-12 mt-32 relative '>
-            <div className='px-[1.5rem] xl:px-[8rem] w-full flex items-center justify-center h-full'>
-                <div className='flex flex-col lg:flex-row lg:w-full gap-5 justify-center lg:justify-between lg:items-center lg:text-center lg:gap-x-[58px]'>
+        <section id='newsletter' className='bg-accent md:h-[400px] py-12 relative '>
+            <div className='container w-full flex items-center justify-center h-full'>
+                <div className='flex flex-col xl:flex-row xl:w-full gap-5 justify-center xl:justify-between xl:items-center xl:text-center xl:gap-x-[58px]'>
                     {/* Text */}
-                    <div className='space-y-2 z-10 flex flex-col items-center lg:items-start tracking-tight sm:tracking-normal'>
+                    <div className='space-y-2 z-10 flex flex-col items-center xl:items-start tracking-tight sm:tracking-normal'>
                         <h1 className='h1 text-white mb-2 font-MorabbaMedium mx-auto lg:mx-0 tracking-wide'>البرز خاطره ی خوش آموزش</h1>
                         <h4 className='text-xs sm:text-base text-white font-DanaDemiBold'>برای اطلاع از آخرین تخفیف ها، ما را در شبکه های اجتماعی دنبال کنید. </h4>
                         <span className='text-xs sm:text-base text-white font-DanaMedium'>شمارتو برامون بنویس تا نشانی شبکه های اجتماعی البرز برات پیامک شه!</span>

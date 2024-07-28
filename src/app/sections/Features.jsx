@@ -15,7 +15,7 @@ function Features(course) {
                             <p className='font-sans'>{course.prop.title}</p>
                         </h1>
                         <span className='text-white flex-1 text-center xl:text-right max-w-2xl xl:max-w-none font-DanaMedium pb-2'>
-                            {/* {course.description} */}
+                            {course.prop.about}
                         </span>
                     </div>
                 </div>

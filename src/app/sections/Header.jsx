@@ -33,7 +33,7 @@ function Header() {
         { id: 1, name: "معرفی", link: "intro" },
         { id: 2, name: "ویژگی", link: "feature" },
         { id: 3, name: "اساتید", link: "professors" },
-        { id: 4, name: "دورهمی", link: "events" },
+        // { id: 4, name: "دورهمی", link: "events" },
         { id: 5, name: "تماس با ما", link: "newsletter" },
     ]
 

@@ -1,5 +1,3 @@
-// pages/courses/[slug].js
-
 import Header from "@/app/sections/Header";
 import Hero from "@/app/sections/Hero";
 import Features from "@/app/sections/Features";

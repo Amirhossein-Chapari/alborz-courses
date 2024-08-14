@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import { EnvelopeIcon, PhoneIcon, UserIcon } from '@heroicons/react/24/solid';
-import Alert from '../components/Alert';
+import Swal from 'sweetalert2';
+
 
 function MainForm({ courseId }) {
-    const [alertVisible, setAlertVisible] = useState(false);
-    const [alertMessage, setAlertMessage] = useState('');
 
     const formik = useFormik({
         initialValues: {
@@ -29,18 +28,27 @@ function MainForm({ courseId }) {
                 }
 
                 await response.json();
-                setAlertMessage('اطلاعات با موفقیت ارسال شد.');
-                setAlertVisible(true);
+                Swal.fire({
+                    title: "اطلاعات با موفقیت ثبت شد.",
+                    iconColor: "#1cbccf",
+                    color: "#808080",
+                    icon: "success",
+                    confirmButtonText: "بازگشت",
+                    confirmButtonColor: "#1cbccf"
+                });
             } catch (error) {
-                setAlertMessage(`Error: ${error.message}`);
-                setAlertVisible(true);
+                Swal.fire({
+                    title: "خطایی رخ داده است!",
+                    color: "#808080",
+                    text: "لطفاً مدتی بعد امتحان کنید.",
+                    icon: "success",
+                    confirmButtonText: "بازگشت",
+                    confirmButtonColor: "#1cbccf"
+                });
             }
         },
     });
 
-    const closeAlert = () => {
-        setAlertVisible(false);
-    };
 
     return (
         <section className='container'>
@@ -118,10 +126,6 @@ function MainForm({ courseId }) {
                     </form>
                 </div>
             </div>
-
-            {alertVisible && (
-                <Alert message={alertMessage} onClose={closeAlert} />
-            )}
         </section>
     );
 }

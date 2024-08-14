@@ -23,7 +23,8 @@
     "react-awesome-reveal": "^4.2.11",
     "react-dom": "^18",
     "react-scroll": "^1.9.0",
-    "remixicon": "^4.2.0"
+    "remixicon": "^4.2.0",
+    "sweetalert2": "^11.12.4"
   },
   "devDependencies": {
     "postcss": "^8",

@@ -47,7 +47,7 @@ function Header() {
 
                 {/* { console.log(props)} */}
                 {/* Logo */}
-                <div className='flex justify-between px-8'>
+                <div className='flex justify-between pr-8'>
                     <p className='block lg:hidden'>مجتمع فنی مهندسی البرز</p>
                     <Image
                         src={logo}
@@ -64,7 +64,11 @@ function Header() {
                         className='hidden lg:flex justify-center items-center gap-x-2 lg:justify-normal'
                     >
                         <MapPinIcon className="h-5 w-5 text-2xl text-accent mb-2" />
-                        <a href="#" className='text-secondary hover:text-primary transition-all'>آدرس</a>
+                        <a
+                            href="https://maps.app.goo.gl/4RsiY52VA6PCCkGi6"
+                            className='text-secondary hover:text-primary transition-all'
+                        >آدرس
+                        </a>
                     </div>
 
                     {/* Phone */}
@@ -94,7 +98,13 @@ function Header() {
                         {/* Logo, List */}
                         <div className='px-12 flex flex-col gap-y-12 h-full'>
                             {/* Logo */}
-                            <div>ALBORZ LOGO</div>
+                            <Image
+                                src={logo}
+                                width={100}
+                                height={50}
+                                alt="Logo"
+                            >
+                            </Image>
                             {/* List */}
                             <ul className='flex flex-col gap-y-5 h-full'>
                                 {sectionLink.map(({ id, name, link }) => (

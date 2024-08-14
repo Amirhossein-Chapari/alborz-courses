@@ -14,7 +14,7 @@ function Features(course) {
                             <span className='font-MorabbaMedium'>ویژگی های دوره</span>
                             <p className='font-sans'>{course.prop.title}</p>
                         </h1>
-                        <span className='text-white flex-1 text-center xl:text-right max-w-2xl xl:max-w-none font-DanaMedium pb-2'>
+                        <span className='text-white flex-1 text-center xl:text-right max-w-2xl xl:max-w-none font-DanaMedium pb-2 tracking-tight text-base md:text-lg'>
                             {course.prop.about}
                         </span>
                     </div>
@@ -27,7 +27,7 @@ function Features(course) {
                     {/* grid item */}
                     {
                         course.prop.attributes.map((attribute, i) => (
-                            <div className='bg-white p-[30px] rounded-[10px] shadow-custom2 min-h-[288px] flex flex-col items-center text-center mb-5 font-DanaMedium' key={i}>
+                            <div className='bg-white p-[30px] rounded-[10px] shadow-custom2 min-h-[288px] flex flex-col items-center text-center mb-5 font-DanaMedium tracking-tight md:tracking-normal text-base md:text-lg' key={i}>
                                 {/* grid icon */}
                                 <span className='w-12 h-12 mb-[15px] text-accent-tertiary'><CodeBracketIcon /></span>
                                 {/* grif item title */}

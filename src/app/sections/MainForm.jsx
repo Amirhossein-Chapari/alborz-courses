@@ -1,19 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
-import { EnvelopeIcon, PhoneIcon, UserIcon } from '@heroicons/react/24/solid'
-
+import { EnvelopeIcon, PhoneIcon, UserIcon } from '@heroicons/react/24/solid';
+import Alert from '../components/Alert';
 
 function MainForm({ courseId }) {
+    const [alertVisible, setAlertVisible] = useState(false);
+    const [alertMessage, setAlertMessage] = useState('');
 
     const formik = useFormik({
         initialValues: {
             name: '',
             phone: '',
             email: '',
-            course: courseId
+            course: courseId,
         },
         onSubmit: async (values) => {
-            console.log(values);
             try {
                 const response = await fetch('https://alborz-institute.com/prereg/api/prereg/', {
                     method: 'POST',
@@ -27,27 +28,30 @@ function MainForm({ courseId }) {
                     throw new Error('Network response was not ok');
                 }
 
-                const result = await response.json();
-                alert(`Success: ${JSON.stringify(result, null, 2)}`);
+                await response.json();
+                setAlertMessage('اطلاعات با موفقیت ارسال شد.');
+                setAlertVisible(true);
             } catch (error) {
-                alert(`Error: ${error}`);
+                setAlertMessage(`Error: ${error.message}`);
+                setAlertVisible(true);
             }
         },
     });
 
+    const closeAlert = () => {
+        setAlertVisible(false);
+    };
+
     return (
-        // <section className='parallax-img shadow-custom1'>
         <section className='container'>
             <div className='container mt-10 xl:mt-20 py-5 lg:py-10 shadow-custom1 rounded-[20px] border border-secondary/10 text-accent'>
-                <h2 className='mb-5 lg:mb-[50px] text-center font-MorabbaMedium text-accent text-lg md:text-2xl lg:text-3xl xl:text-5xl'>
+                <h2 className='mb-5 lg:mb-[50px] text-center font-MorabbaMedium text-accent text-[23px] lg:text-3xl xl:text-5xl'>
                     برای مشاوره رایگان فرم زیر را پر کنید .
                 </h2>
                 <div>
-                    {/* <form onSubmit={formik.handleSubmit} className='flex flex-col xl:flex-row lg:gap-5'> */}
                     <form onSubmit={formik.handleSubmit} className='grid grid-cols-4 gap-5'>
                         {/* Name input*/}
                         <div className='col-span-4 sm:col-span-2 xl:col-span-1'>
-                            {/* <label htmlFor="name" /> */}
                             <div className="relative border rounded-lg">
                                 <div className="absolute inset-y-0 end-0 flex items-center pe-3.5 pointer-events-none">
                                     <div className='w-4 h-4 text-gray-500 dark:text-gray-400'>
@@ -111,36 +115,13 @@ function MainForm({ courseId }) {
                                 ثبت
                             </button>
                         </div>
-
-
-
-
-
-
-
-
-                        {/* <label htmlFor="phone">Phone</label>
-                        <input
-                            id="phone"
-                            name="phone"
-                            type="number"
-                            onChange={formik.handleChange}
-                            value={formik.values.phone}
-                        />
-
-                        <label htmlFor="email">Email Address</label>
-                        <input
-                            id="email"
-                            name="email"
-                            type="email"
-                            onChange={formik.handleChange}
-                            value={formik.values.email}
-                        />
-
-                        <button type="submit">Submit</button> */}
                     </form>
                 </div>
             </div>
+
+            {alertVisible && (
+                <Alert message={alertMessage} onClose={closeAlert} />
+            )}
         </section>
     );
 }

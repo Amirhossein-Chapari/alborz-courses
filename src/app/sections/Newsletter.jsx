@@ -8,7 +8,7 @@ function Newsletter() {
                     {/* Text */}
                     <div className='space-y-2 z-10 flex flex-col items-center xl:items-start tracking-tight sm:tracking-normal'>
                         <h1 className='h1 text-white mb-2 font-MorabbaMedium mx-auto lg:mx-0 tracking-wide'>البرز خاطره ی خوش آموزش</h1>
-                        <h4 className='text-xs sm:text-base text-white font-DanaDemiBold'>برای اطلاع از آخرین تخفیف ها، ما را در شبکه های اجتماعی دنبال کنید. </h4>
+                        <h4 className='text-[13px] sm:text-base text-white font-DanaDemiBold'>برای اطلاع از آخرین تخفیف ها، ما را در شبکه های اجتماعی دنبال کنید. </h4>
                         <span className='text-xs sm:text-base text-white font-DanaMedium'>شمارتو برامون بنویس تا نشانی شبکه های اجتماعی البرز برات پیامک شه!</span>
                     </div>
                     {/* Form */}

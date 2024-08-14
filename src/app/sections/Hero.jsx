@@ -68,7 +68,7 @@ const rtlAnimation = keyframes`
 
 function Hero(course) {
   return (
-    <section id='intro' className='hero bg-gray py-12 xl:pt-12 xl:pb-0 overflow-hidden font-DanaMedium'>
+    <section id='intro' className='hero bg-gray pt-2 pb-12  xl:pt-12 xl:pb-0 overflow-hidden font-DanaMedium'>
       <div className='container mx-auto h-full'>
         {/* Text & Video */}
         <div className='flex flex-col xl:flex-row gap-10 items-center justify-between h-full py-10 xl:py-20'>

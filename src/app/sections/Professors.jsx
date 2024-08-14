@@ -50,7 +50,7 @@ function Professors(course) {
                                         <CodeBracketIcon className='xl:w-7 h-7 text-accent' />
                                         {teacher.field}
                                     </div>
-                                    <p className='mb-[26px] font-Dana tracking-tighter'>{teacher.description}</p>
+                                    <p className='mb-[26px] font-DanaMedium text-base md:text-lg'>{teacher.description}</p>
                                 </div>
 
                             </div>

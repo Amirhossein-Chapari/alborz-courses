@@ -29,21 +29,23 @@ function MainForm({ courseId }) {
 
                 await response.json();
                 Swal.fire({
-                    title: "اطلاعات با موفقیت ثبت شد.",
+                    title: "اطلاعات با موفقیت ثبت شد",
+                    icon: "success",
+                    timer: 1500,
+                    timerProgressBar: true,
+                    showConfirmButton: false,
                     iconColor: "#1cbccf",
                     color: "#808080",
-                    icon: "success",
-                    confirmButtonText: "بازگشت",
-                    confirmButtonColor: "#1cbccf"
                 });
             } catch (error) {
                 Swal.fire({
                     title: "خطایی رخ داده است!",
-                    color: "#808080",
                     text: "لطفاً مدتی بعد امتحان کنید.",
-                    icon: "success",
-                    confirmButtonText: "بازگشت",
-                    confirmButtonColor: "#1cbccf"
+                    icon: "warning",
+                    timer: 1500,
+                    timerProgressBar: true,
+                    showConfirmButton: false,
+                    color: "#808080",
                 });
             }
         },

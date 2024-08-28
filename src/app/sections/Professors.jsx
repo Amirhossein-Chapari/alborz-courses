@@ -16,11 +16,11 @@ function Professors(course) {
                         // console.log(course)
                         course.prop.teachers.map((teacher, i) => (
                             // console.log(teacher),
-                            <div className='flex flex-col xl:flex-row items-center gap-x-10' key={i}>
+                            <div className='flex flex-col items-center gap-x-10' key={i}>
 
                                 {/* Mobile size */}
-                                <div className='container flex xl:hidden px-0 gap-5 mb-5'>
-                                    <div className='rounded-full p-1 border-2 border-accent'>
+                                <div className='container flex px-0 gap-5 mb-5'>
+                                    <div className='rounded-full p-1 border-2 border-accent z-10'>
                                         <img src={teacher.image} width={140} height={140} className='min-w-[100px] rounded-full' alt="professorPicture" />
                                     </div>
                                     <div className='flex flex-col justify-center'>
@@ -36,21 +36,21 @@ function Professors(course) {
                                 </div>
 
                                 {/* Descktop size */}
-                                <div className='hidden xl:flex items-center justify-center'>
+                                {/* <div className='hidden xl:flex items-center justify-center'>
                                     <img src={teacher.image} width={1100} height={1100} className='rounded-md shadow-custom1' alt="professorPicture" />
-                                </div>
+                                </div> */}
 
                                 {/* Name & Desc */}
                                 <div className='flex flex-col justify-center items-start'>
-                                    <h4 className='h4 hidden xl:flex items-center gap-2 pt-5 mb-[10px]'>
+                                    {/* <h4 className='h4 hidden xl:flex items-center gap-2 pt-5 mb-[10px]'>
                                         <UserCircleIcon className='w-8 h-8 text-accent' />
                                         <span className='font-DanaDemiBold w-64'>{teacher.name}</span>
                                     </h4>
                                     <div className='hidden xl:flex items-center gap-2  text-[#9ab4b7] mb-[20px] font-DanaMedium'>
                                         <CodeBracketIcon className='xl:w-7 h-7 text-accent' />
                                         {teacher.field}
-                                    </div>
-                                    <p className='mb-[26px] font-DanaMedium text-base md:text-lg'>{teacher.description}</p>
+                                    </div> */}
+                                    <p className='mb-[26px] font-DanaMedium text-base md:text-lg bg-secondary/15 p-5 pt-12 -mt-12 rounded-lg'>{teacher.description}</p>
                                 </div>
 
                             </div>

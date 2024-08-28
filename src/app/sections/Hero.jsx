@@ -101,13 +101,11 @@ function Hero(course) {
           </div>
 
           {/* Video */}
-          <div className='flex-1 sm:w-auto'>
-            <Reveal keyframes={bottomToTopAnimation}>
-              <video controls className='border-b-4 border-accent shadow-xl w-full'>
-                <source src={course.prop.video} type="video/mp4" />
-              </video>
-            </Reveal>
-          </div>
+            <div className='flex-1 sm:w-auto'>
+          <Reveal keyframes={bottomToTopAnimation}>
+              <div className='w-full' dangerouslySetInnerHTML={{ __html: course.prop.video }}></div>
+          </Reveal>
+            </div>
 
 
         </div>

@@ -1,6 +1,21 @@
 import React from 'react'
+import Swal from 'sweetalert2';
+
 
 function Newsletter() {
+
+    const submitHandler = () => {
+        Swal.fire({
+            title: "اطلاعات با موفقیت ثبت شد",
+            icon: "success",
+            timer: 1500,
+            timerProgressBar: true,
+            showConfirmButton: false,
+            iconColor: "#1cbccf",
+            color: "#808080",
+        });
+    } 
+
     return (
         <section id='newsletter' className='bg-accent md:h-[400px] py-12 relative '>
             <div className='container w-full flex items-center justify-center h-full'>
@@ -14,8 +29,8 @@ function Newsletter() {
                     {/* Form */}
                     <form action="#" className='px-5 flex justify-center items-center font-DanaMedium'>
                         <div className='flex flex-col md:flex-row relative gap-y-4 group text-xs sm:text-base'>
-                            <input type="number" name='phoneNumber' placeholder='شماره تلفن همراه' className='rounded-full px-20 sm:w-[350px] md:w-[450px] h-12 md:h-[66px] pr-[30px] focus:ring-accent transition duration-500'/>
-                            <button className='px-10 sm:px-16 md:px-20 md:w-auto md:h-[58px] h-10 m-1 bg-accent rounded-full absolute left-0 group-hover:bg-accent-secondary text-white transition-all duration-500'>ثبت</button>
+                            <input type="number" name='phoneNumber' placeholder='شماره تلفن همراه' className='rounded-full px-20 sm:w-[350px] md:w-[450px] h-12 md:h-[66px] pr-[30px] focus:ring-accent transition duration-500' />
+                            <button onClick={submitHandler} className='px-10 sm:px-16 md:px-20 md:w-auto md:h-[58px] h-10 m-1 bg-accent rounded-full absolute left-0 group-hover:bg-accent-secondary text-white transition-all duration-500'>ثبت</button>
                         </div>
                     </form>
                 </div>

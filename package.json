@@ -23,6 +23,7 @@
     "react-awesome-reveal": "^4.2.11",
     "react-dom": "^18",
     "react-scroll": "^1.9.0",
+    "react-share": "^5.1.0",
     "remixicon": "^4.2.0",
     "sweetalert2": "^11.12.4"
   },

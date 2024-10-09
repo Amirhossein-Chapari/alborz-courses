@@ -3,7 +3,7 @@ import Hero from "@/app/sections/Hero";
 import Features from "@/app/sections/Features";
 import MainForm from "@/app/sections/MainForm";
 import Professors from "@/app/sections/Professors";
-import Events from "@/app/sections/Events";
+// import Events from "@/app/sections/Events";
 import Newsletter from "@/app/sections/Newsletter";
 import Footer from "@/app/sections/Footer";
 import Custom404 from "../404";
@@ -29,23 +29,22 @@ export default function CoursePage({ course, notFound }) {
 
 export async function getServerSideProps({ params }) {
     const { slug } = params;
-    const res = await fetch(`https://alborz-institute.com/prereg/api/courses/${slug}/`);
+    let course = null;
+    let notFound = false;
 
-    if (!res.ok) {
-        return {
-            props: { notFound: true },
-        };
-    }
-
-    const course = await res.json();
-
-    if (!course) {
-        return {
-            props: { notFound: true },
-        };
+    try {
+        const res = await fetch(`http://alborz.tech/v1/api/courses/${slug}/`);
+        if (!res.ok) {
+            notFound = true;
+        } else {
+            course = await res.json();
+        }
+    } catch (error) {
+        console.error('Error fetching the course:', error);
+        notFound = true;
     }
 
     return {
-        props: { course },
+        props: { course, notFound },
     };
 }

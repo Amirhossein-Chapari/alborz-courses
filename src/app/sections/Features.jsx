@@ -55,7 +55,7 @@ function Features(course) {
                                     <div className="highlighted-box w-72 bg-[#84f5f5] p-3 rounded-[2rem] text-center relative shadow-[0_8px_16px_#98ADBD,0_4px_8px_#84f5f5] transition-shadow duration-200 hover:shadow-[0_12px_24px_rgba(0,0,0,0.5),0_6px_12px_#84f5f5]">
                                         <div className="circle flex items-center justify-center w-[110px] h-[110px] bg-[#f4f3ee] rounded-full absolute -top-[60px] left-1/2 transform -translate-x-1/2 shadow-[0_8px_16px_#98ADBD,0_4px_8px_#84f5f5] transition-shadow duration-200 z-20 hover:shadow-[0_12px_24px_rgba(0,0,0,0.5),0_6px_12px_#84f5f5]">
                                             <div className="innerCircle w-[90px] h-[90px] bg-[#84f5f5] rounded-full mx-auto relative shadow-[0_8px_16px_#98ADBD,0_4px_8px_#84f5f5] border-[5px] border-[#84f5f5] z-30 overflow-hidden">
-                                                <Image src={infoGif} />
+                                                <Image src={attribute.gif} />
                                             </div>
                                         </div>
                                         <div className="main">

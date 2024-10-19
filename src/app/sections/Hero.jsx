@@ -71,7 +71,7 @@ function Hero(course) {
     <section id='intro' className='hero bg-gradient-to-b from-[#e8f0f1] to-transparent pt-2 pb-12  xl:pt-12 xl:pb-0 overflow-hidden font-DanaMedium' >
       <div className='container mx-auto h-full'>
         {/* Text & Video */}
-        <div className='flex flex-col xl:flex-row gap-10 items-center justify-between h-full py-10 xl:py-20'>
+        <div className='flex flex-col xl:flex-row gap-10 items-center justify-between h-full xl:py-20'>
           {/* Text */}
           <div className='flex-1 text-center xl:text-start space-y-3'>
             {/* Badge */}
@@ -106,6 +106,7 @@ function Hero(course) {
               <div className='w-full' dangerouslySetInnerHTML={{ __html: course.prop.video }}></div>
             </Reveal>
           </div>
+
 
 
         </div>

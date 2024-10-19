@@ -28,9 +28,14 @@ function Footer() {
                             >
                             </Image>
                             {/* <br /> */}
-                            <p className='tracking-normal md:tracking-tighter font-DanaMedium text-base md:text-lg'>
+                            {/* <p className='tracking-normal md:tracking-tighter font-DanaMedium text-base md:text-lg'>
                                 البرز مفتخر است که بیش از 25  سال با برگزاری دوره های خاص IT هم در زمینه شبکه و برنامه نویسی با بهره گیری از مجرب ترین اساتید ایران، خدمات شایانی را جهت تربیت و عرضه نیروی کار ماهر نموده است.
-                            </p>
+                            </p> */}
+                            <div className="max-w-lg text-white text-lg text-justify overflow-hidden">
+                                <p className="break-words overflow-wrap">
+                                    البرز مفتخر است که بیش از 25 سال با برگزاری دوره های خاص IT هم در زمینه شبکه و برنامه نویسی با بهره گیری از مجرب ترین اساتید ایران، خدمات شایانی را جهت تربیت و عرضه نیروی کار ماهر نموده است.
+                                </p>
+                            </div>
                         </div>
                         {/* Footer contact section */}
                         <div>

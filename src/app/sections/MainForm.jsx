@@ -15,7 +15,7 @@ function MainForm({ courseId }) {
         },
         onSubmit: async (values) => {
             try {
-                const response = await fetch('https://alborz-institute.com/prereg/api/prereg/', {
+                const response = await fetch('https://alborz-institute.com/v1/api/prereg/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ function MainForm({ courseId }) {
 
     return (
         <section className='container'>
-            <div className='container mt-10 xl:mt-20 py-5 lg:py-10 shadow-custom1 rounded-[20px] border border-secondary/10 text-accent'>
+            <div className='container mt-20 py-5 lg:py-10 shadow-custom1 rounded-[20px] border border-secondary/10 text-accent'>
                 <h2 className='mb-5 lg:mb-[50px] text-center font-MorabbaMedium text-accent text-[23px] lg:text-3xl xl:text-5xl'>
                     برای مشاوره رایگان فرم زیر را پر کنید .
                 </h2>

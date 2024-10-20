@@ -48,3 +48,5 @@ export async function getServerSideProps({ params }) {
         props: { course, notFound },
     };
 }
+
+

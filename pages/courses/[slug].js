@@ -6,7 +6,9 @@ import Professors from "@/app/sections/Professors";
 // import Events from "@/app/sections/Events";
 import Newsletter from "@/app/sections/Newsletter";
 import Footer from "@/app/sections/Footer";
+import CoursesCard from "../CoursesCard";
 import Custom404 from "../404";
+import Roadmap from "@/app/sections/Roadmap";
 
 export default function CoursePage({ course, notFound }) {
     if (notFound) {
@@ -19,7 +21,9 @@ export default function CoursePage({ course, notFound }) {
             <Hero prop={course} />
             <Features prop={course} />
             <MainForm courseId={course.id} />
+            {/* <Roadmap /> */}
             <Professors prop={course} />
+            {/* <CoursesCard /> */}
             {/* <Events prop={course} /> */}
             <Newsletter />
             <Footer />
@@ -33,14 +37,14 @@ export async function getServerSideProps({ params }) {
     let notFound = false;
 
     try {
-        const res = await fetch(`http://alborz.tech/v1/api/courses/${slug}/`);
+        const res = await fetch(`https://alborz.tech/v1/api/courses/${slug}/`);
         if (!res.ok) {
-            notFound = true;
+            notFound =  true;
         } else {
             course = await res.json();
         }
     } catch (error) {
-        console.error('Error fetching the course:', error);
+        // console.error('Error fetching the course:', error);
         notFound = true;
     }
 

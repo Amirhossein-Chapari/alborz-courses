@@ -5,6 +5,7 @@ import { MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid'
 import { ChevronLeftIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import logo from '../../../public/images/logo.png'
+import { AcademicCapIcon, PuzzlePieceIcon, UserIcon } from '@heroicons/react/24/solid'
 
 
 function Header() {
@@ -29,13 +30,32 @@ function Header() {
         setIsActive(!isActive);
     };
 
+    // const sectionLink = [
+    //     { id: 1, name: "معرفی", link: "intro", icon: <AcademicCapIcon className="h-6 w-6 text-primary" /> },
+    //     { id: 2, name: "ویژگی", link: "feature", icon: <PuzzlePieceIcon className="h-6 w-6 text-primary" /> },
+    //     // { id: 2, name: "سرفصل ها", link: "feature", icon: <PuzzlePieceIcon className="h-6 w-6 text-primary" /> },
+    //     { id: 3, name: "اساتید", link: "professors", icon: <UserIcon className="h-6 w-6 text-primary" /> },
+    //     // { id: 3, name: "دورهمی", link: "events", icon: <UserIcon className="h-6 w-6 text-primary" /> },
+    //     { id: 5, name: "تماس با ما", link: "newsletter", icon: <PhoneIcon className="h-6 w-6 text-primary" /> },
+    // ];
+
     const sectionLink = [
-        { id: 1, name: "معرفی", link: "intro" },
-        { id: 2, name: "ویژگی", link: "feature" },
-        { id: 3, name: "اساتید", link: "professors" },
-        // { id: 4, name: "دورهمی", link: "events" },
-        { id: 5, name: "تماس با ما", link: "newsletter" },
-    ]
+        { id: 1, name: "معرفی", link: "intro", icon: <AcademicCapIcon className="h-6 w-6 text-accent-secondary" /> },
+        { id: 2, name: "ویژگی", link: "feature", icon: <PuzzlePieceIcon className="h-6 w-6 text-accent-secondary" /> },
+        { id: 3, name: "اساتید", link: "professors", icon: <UserIcon className="h-6 w-6 text-accent-secondary" /> },
+        { id: 5, name: "تماس با ما", link: "newsletter", icon: <PhoneIcon className="h-6 w-6 text-accent-secondary" /> },
+    ];
+
+    // phone num dropdown handler
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleMouseEnter = () => {
+        setIsOpen(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsOpen(false);
+    };
 
     return (
         <header className='py-8 lg:pt-6 lg:pb-14 font-DanaMedium'>
@@ -71,12 +91,30 @@ function Header() {
                         </a>
                     </div>
 
-                    {/* Phone */}
+                    {/* Phone Number Dropdown */}
                     <div
-                        className='hidden lg:flex justify-center items-center gap-x-2 lg:justify-normal'
+                        className='relative'
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
                     >
-                        <PhoneIcon className="h-5 w-5 text-2xl text-accent mb-2" />
-                        <span dir='ltr' className='text-secondary'>04133323879</span>
+                        <div
+                            className='hidden lg:flex justify-center items-center gap-x-2 lg:justify-normal cursor-pointer pt-2.5'
+                        >
+                            <PhoneIcon className="h-5 w-5 text-2xl text-accent mb-2" />
+                            <span dir='ltr' className='text-secondary hover:text-black'>شماره تماس</span>
+                        </div>
+
+                        {/* Phone numbers dropdown */}
+                        <div
+                            className={`w-[150px] transition-all duration-300 ease-out transform ${isOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0'} origin-top absolute -right-4 w-full bg-white shadow-lg p-4 rounded-md z-50`}
+                            style={{ top: '100%' }}
+                        >
+                            <ul className='text-secondary text-center '>
+                                <li className="py-2 hover:text-primary">041-33323821</li>
+                                <li className="py-2 hover:text-primary">041-33323879</li>
+                                <li className="py-2 hover:text-primary">041-33103314</li>
+                            </ul>
+                        </div>
                     </div>
                     {/* Button */}
                     {/* <button className='btn btn-sm'></button> */}
@@ -96,19 +134,23 @@ function Header() {
                         </button>
 
                         {/* Logo, List */}
-                        <div className='px-12 flex flex-col gap-y-12 h-full'>
+                        <div className=' flex flex-col gap-y-12 h-full '>
                             {/* Logo */}
-                            <Image
-                                src={logo}
-                                width={100}
-                                height={50}
-                                alt="Logo"
-                            >
-                            </Image>
+                            <div className='border-b border-primary px-5 pb-5 -mt-2'>
+                                <Image
+                                    src={logo}
+                                    width={100}
+                                    height={50}
+                                    alt="Logo"
+                                >
+                                </Image>
+                            </div>
+
                             {/* List */}
-                            <ul className='flex flex-col gap-y-5 h-full'>
-                                {sectionLink.map(({ id, name, link }) => (
-                                    <li key={id}>
+                            <ul className='flex flex-col gap-y-5 h-full px-7'>
+                                {sectionLink.map(({ id, name, link, icon }) => (
+                                    <li key={id} className='flex items-center gap-x-3'>
+                                        {icon}
                                         <a
                                             href={`/#${link}`}
                                             className='hover:text-accent text-black transition-all duration-300 z-50'

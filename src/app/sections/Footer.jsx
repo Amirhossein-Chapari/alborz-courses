@@ -6,11 +6,11 @@ import logo from '../../../public/images/logo.png'
 function Footer() {
     return (
         <>
-            <footer className='pt-12 xl:pt-[150px] border-b'>
-                <div className="container pb-12 xl:pb-[100px]">
-                    <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-x-20 gap-y-10'>
+            <footer className='pt-12 xl:pt-[100px] border-b'>
+                <div className="container pb-12 xl:pb-[70px]">
+                    <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-x-20 gap-y-10 '>
                         {/* Logo & Desc section */}
-                        <div className='md:col-span-2 xl:col-span-1'>
+                        <div className='md:col-span-2 xl:col-span-1 mt-2'>
                             {/* <Image
                                 src={logo}
                                 width={130}
@@ -28,7 +28,7 @@ function Footer() {
                             >
                             </Image>
                             {/* <br /> */}
-                            <p className='tracking-normal md:tracking-tighter font-DanaMedium text-base md:text-lg'>
+                            <p className='tracking-normal md:tracking-tighter font-DanaMedium text-base md:text-lg mt-2'>
                                 البرز مفتخر است که بیش از 25  سال با برگزاری دوره های خاص IT هم در زمینه شبکه و برنامه نویسی با بهره گیری از مجرب ترین اساتید ایران، خدمات شایانی را جهت تربیت و عرضه نیروی کار ماهر نموده است.
                             </p>
                             {/* <div className="max-w-lg text-white text-lg text-justify overflow-hidden">
@@ -55,8 +55,9 @@ function Footer() {
                                     </div>
 
                                     <span>
-                                        <p dir='ltr'>04133323879</p>
-                                        <p dir='ltr'>04133323821</p>
+                                        <p dir='ltr'>041 - 33323879</p>
+                                        <p dir='ltr'>041 - 33323821</p>
+                                        <p dir='ltr'>041 - 33103314</p>
                                     </span>
 
                                 </div>

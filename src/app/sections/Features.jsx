@@ -1,7 +1,4 @@
 import React from 'react'
-import { ClockIcon, CodeBracketIcon } from '@heroicons/react/24/outline'
-import Image from 'next/image'
-import infoGif from '../../../public/images/chat (1).gif'
 // Animation
 import Reveal from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
@@ -56,9 +53,8 @@ function Features(course) {
                             </Reveal>
                         </div>
                     ))}
-
-
                 </div>
+
             </div>
         </section>
     )

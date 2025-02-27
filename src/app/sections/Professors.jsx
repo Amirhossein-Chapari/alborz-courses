@@ -18,8 +18,7 @@ function Professors(course) {
               <div className="flex flex-col items-center gap-x-10" key={i}>
                 {/* Mobile size */}
                 <div className="container flex px-0 gap-5 mb-5">
-                  <Link href={`/profile`}>
-                    {/* مسیر صفحه پروفایل استاد */}
+                  {/* <Link href={`/profile`}> */}
                     <div className="flex cursor-pointer gap-2">
                       <div className="rounded-full p-1 border-2 border-accent z-10">
                         <img
@@ -43,7 +42,7 @@ function Professors(course) {
                         </div>
                       </div>
                     </div>
-                  </Link>
+                  {/* </Link> */}
                 </div>
 
                 {/* Descktop size */}
